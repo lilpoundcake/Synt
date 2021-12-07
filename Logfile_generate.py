@@ -13,7 +13,8 @@ primer_lenght = input("Введите желаемую длину праймер
 log_title += ("length low " + primer_lenght + "\n")
 
 codon_freq = input("Введите пороговое значение частоты встречаемости кодонов\n")
-log_title += ("frequency threshold " + codon_freq + "\n")
+log_title += ("frequency threshold " + codon_freq + "\n" + "tbio"+"\n")
+
                    
 sys_expr = int(input("Укажите систему экспрессии:\n1 - E.coli\n2 - CHO\n3 - Human\n4 - Sf9\n"))
 if sys_expr == 1:
@@ -76,7 +77,7 @@ print(fragment_list)
 for i in range(len(fragment_list)):
   output_i = open(project_name + "_" + str(i+1) + ".inp", "w")
   if seq_prot == "":
-    output_i.write(log_title + "logfile " + project_name + "_" + str(i+1) + ".txt" + "\nnucleotide\n" + fragment_list[i] + "//")
+    output_i.write(log_title + "logfile " + project_name + "_" + str(i+1) + ".txt" + "\nnucleotide gapfix\n" + fragment_list[i] + "\n//\n")
   else:
     output_i.write(log_title + "logfile " + project_name + "_" + str(i+1) + ".txt" + "\nprotein\n" + fragment_list[i] + "//")
   output_i.close()  
