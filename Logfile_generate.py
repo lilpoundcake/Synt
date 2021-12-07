@@ -47,10 +47,10 @@ if seq_prot == "":
 else:
   seq_len = len(seq_prot)                 
 
-print("seq_len ", seq_len, "\n", "seq_nt ", seq_nt, "\n", "seq_prot", seq_prot, "\n") 
+#print("seq_len ", seq_len, "\n", "seq_nt ", seq_nt, "\n", "seq_prot", seq_prot, "\n") 
   
 if seq_len >= 500 and seq_prot == "":
-  fragment_num = math.ceil(len(seq_nt)/350)
+  fragment_num = math.ceil(len(seq_nt)/500)
   fragment_len = math.ceil(seq_len/fragment_num)
   for i in range(fragment_num):
     if i == int(fragment_num-1):
