@@ -36,20 +36,20 @@ elif sys_expr == 4:
                   
 if int(input("Последовательность аминокислотная или нуклеотидная?\n1 - аминокислотная\n2 - нуклеотидная\n")) == 1:
   seq_prot = input("Введите последовательность белка\n")
-  seq_nt = ""
+  seq_nt = 0
 else:
   seq_nt = input("Введите нуклеотидную последовательность\n")
-  seq_prot = ""
+  seq_prot = 0
 
 fragment_list = []
-if seq_prot == "":
+if seq_prot == 0:
   seq_len = len(seq_nt)
 else:
   seq_len = len(seq_prot)                 
 
 #print("seq_len ", seq_len, "\n", "seq_nt ", seq_nt, "\n", "seq_prot", seq_prot, "\n") 
   
-if seq_len >= 500 and seq_prot == "": 
+if seq_len >= 500 and seq_prot == 0: 
     fragment_num = math.ceil(len(seq_nt)/500) #7
     print(fragment_num)
     fragment_len = math.ceil(seq_len/fragment_num) #436
@@ -61,10 +61,10 @@ if seq_len >= 500 and seq_prot == "":
         else:
             fragment_list.append(seq_nt[(fragment_len*i):(fragment_len*(i+1))])
         print(seq_nt[(fragment_len*i):(fragment_len*(i+1))])
-elif seq_len < 500 and seq_prot == "":
+elif seq_len < 500 and seq_prot == 0:
     fragment_num = 1
     fragment_list.append(seq_nt)
-elif seq_len >= 166 and seq_nt == "":
+elif seq_len >= 166 and seq_nt == 0:
     fragment_num = int(math.ceil(seq_len/166))
     print(fragment_num, "fragm_num")
     fragment_len = math.ceil(seq_len/fragment_num)
@@ -78,7 +78,7 @@ elif seq_len >= 166 and seq_nt == "":
             #print(fragment_len*i)
             #print(fragment_len*(i+1)+i)
             fragment_list.append(seq_prot[fragment_len*i:(fragment_len*(i+1))])
-elif seq_len < 166 and seq_nt == "":
+elif seq_len < 166 and seq_nt == 0:
     fragment_num = 1
     fragment_list.append(seq_prot)
 
@@ -87,7 +87,7 @@ elif seq_len < 166 and seq_nt == "":
 
 for i in range(len(fragment_list)):
   output_i = open(project_name + "_" + str(i+1) + ".inp", "w")
-  if seq_prot == "":
+  if seq_prot == 0:
     output_i.write(log_title + "\nlogfile " + project_name + "_" + str(i+1) + ".txt\n" + "\nnucleotide\n" + fragment_list[i] + "\n//\n")
   else:
     output_i.write(log_title + "\nlogfile " + project_name + "_" + str(i+1) + ".txt\n" + "\nprotein\n" + fragment_list[i] + "\n//\n")
@@ -117,7 +117,7 @@ bash_script.write("cp " + project_name + "_high_temp.csv " + str(project_name) +
 bash_script.write("cp " + project_name + "_SG_primers.fasta " + str(project_name) + "\n")
 bash_script.write("cp " + project_name + "_sequence.fasta " + str(project_name) + "\n")
 
-bash_script.write("rm -f " + project_name + "*\n")
+#bash_script.write("rm -f " + project_name + "*\n")
 
 bash_script.close()
 
