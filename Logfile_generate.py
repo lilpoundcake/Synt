@@ -54,7 +54,7 @@ if seq_len >= 500 and seq_prot == "":
   fragment_len = math.ceil(seq_len/fragment_num)
   for i in range(fragment_num):
     if i == int(fragment_num-1):
-      fragment_list.append(seq_nt[(fragment_len*(i)):len(seq_nt)])
+      fragment_list.append(seq_nt[(fragment_len*(i)):])
     else:
       fragment_list.append(seq_nt[(fragment_len*i):(fragment_len*(i+1))])
 elif seq_len < 500 and seq_prot == "":
@@ -72,18 +72,18 @@ elif seq_len < 166 and seq_nt == "":
   fragment_num = 1
   fragment_list.append(seq_prot)
 
-print(fragment_list)
+#print(fragment_list)
 
 for i in range(len(fragment_list)):
   output_i = open(project_name + "_" + str(i+1) + ".inp", "w")
   if seq_prot == "":
-    output_i.write(log_title + "logfile " + project_name + "_" + str(i+1) + ".txt" + "\nnucleotide gapfix\n" + fragment_list[i] + "\n//\n")
+    output_i.write(log_title + "\nlogfile " + project_name + "_" + str(i+1) + ".txt\n" + "\nnucleotide\n" + fragment_list[i] + "\n//\n")
   else:
-    output_i.write(log_title + "logfile " + project_name + "_" + str(i+1) + ".txt" + "\nprotein\n" + fragment_list[i] + "//")
+    output_i.write(log_title + "\nlogfile " + project_name + "_" + str(i+1) + ".txt\n" + "\nprotein\n" + fragment_list[i] + "\n//\n")
   output_i.close()  
                    
 data_log = open("data_log.txt", "w")
-data_log.write("project_name " + project_name + "\nfragment_num " + str(fragment_num) + "\nreact_temp " + str(react_temp))
+data_log.write("project_name " + project_name + "\nfragment_num " + str(fragment_num+1) + "\nreact_temp " + str(react_temp))
 data_log.close()
 
 bash_script = open("bash_next.sh", "w")
