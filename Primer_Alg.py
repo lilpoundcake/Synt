@@ -14,7 +14,7 @@ start_seq = 0
 data_log = open("data_log.txt", "r")
 file_name = data_log.readline().split()[1]
 
-for n in range(int(data_log.readline().split()[1])):
+for n in range(int(data_log.readline().split()[1])+1):
     primers = open(file_name + '_' + str(n+1) +'.txt', 'r')
     for i in primers:
         if 'oligonucleotides need to be synthesized' in i:
