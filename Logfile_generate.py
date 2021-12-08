@@ -99,9 +99,9 @@ for i in range(len(fragment_list)):
   output_i.close()  
                    
 data_log = open("data_log.txt", "w")
-data_log.write("project_name " + project_name + "\nfragment_num " + str(fragment_num) + "\nreact_temp " + str(react_temp))
+data_log.write("project_name " + project_name + "\nfragment_num " + str(fragment_num) + "\nreact_temp " + str(react_temp) + "\n\n")
 for i in fragment_list:
-  data_log.write("# " + i)
+  data_log.write("\n# " + i)
 data_log.close()
 
 bash_script = open("bash_next.sh", "w")
