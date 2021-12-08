@@ -11,7 +11,7 @@ log_title += ("melting low " + str(react_temp) + "\n")
 
 primer_lenght = 50 #input("Введите желаемую длину праймеров\n")
 log_title += ("length low " + str(primer_lenght) + "\n")
-
+log_title += ("tbio\n")
                   
 """sys_expr = int(input("Укажите систему экспрессии:\n1 - E.coli\n2 - CHO\n3 - Human\n4 - Sf9\n"))
 if sys_expr == 1:
@@ -43,7 +43,7 @@ seq_nt = "ATGACCAAACTGACCATGCAGGATGTTACCAATCTGTATCTGTACAAAACCAAAACGCTGCCGAAAGATC
 
 if seq_nt == 0:
   codon_freq = input("Введите пороговое значение частоты встречаемости кодонов\n")
-  log_title += ("frequency threshold " + codon_freq + "\n" + "tbio"+"\n")
+  log_title += ("frequency threshold " + codon_freq + "\n")
 
 
 fragment_list = []
