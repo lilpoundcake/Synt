@@ -132,7 +132,7 @@ bash_script.write("cp " + project_name + "_sequence.fasta " + str(project_name) 
 
 bash_script.write("cd\n") #~
 bash_script.write("git init " + project_name + "\n")
-bash_script.write("cp -r ./DNAWorks/" + project_name + "/ ." + project_name + "\n")
+bash_script.write("cp -r ./DNAWorks/" + project_name + "/ .\n")
 
 #bash_script.write("rm -f " + project_name + "_*\n")
 bash_script.write("rm -rf ./DNAWorks ./For_DNAWorks\n" )
