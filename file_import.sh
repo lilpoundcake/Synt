@@ -2,7 +2,7 @@
 
 apt-get install python3-dev
 pip install pandas
-apt-get install wheel
+pip install wheel
 pip install primer3
 
 cd ..
