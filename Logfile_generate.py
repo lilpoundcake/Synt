@@ -117,7 +117,7 @@ for i in range(fragment_num):
   bash_script.write("./dnaworks " + project_name + "_" + str(i+1) + ".inp\n")
   
 bash_script.write("python3 Primer_Alg.py\n")
-bash_script.write("mkdir " + project_name + "\n" )
+bash_script.write("mkdir " + project_name + "\n" ) #dnaworks
 
 for i in range(fragment_num):
   bash_script.write("cp " + project_name + "_" + str(i+1) + ".inp " + str(project_name) + "\n")
@@ -130,7 +130,12 @@ bash_script.write("cp " + project_name + "_high_temp.csv " + str(project_name) +
 bash_script.write("cp " + project_name + "_SG_primers.fasta " + str(project_name) + "\n")
 bash_script.write("cp " + project_name + "_sequence.fasta " + str(project_name) + "\n")
 
-bash_script.write("rm -f " + project_name + "_*\n")
+bash_script.write("cd\n") #~
+bash_script.write("git init " + project_name + "\n")
+bash_script.write("cp ./DNAWorks/" + project_name + "/ ." + "\n")
+
+#bash_script.write("rm -f " + project_name + "_*\n")
+bash_script.write("rm -rf ./DNAWorks ./For_DNAWorks\n" )
 
 bash_script.close()
 
