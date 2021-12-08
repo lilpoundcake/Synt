@@ -93,7 +93,13 @@ elif seq_len < 166 and seq_nt == 0:
 for i in range(len(fragment_list)):
   output_i = open(project_name + "_" + str(i+1) + ".inp", "w")
   if seq_prot == 0:
-    output_i.write(log_title + "\nlogfile " + project_name + "_" + str(i+1) + ".txt\n" + "\nnucleotide\n" + fragment_list[i] + "\n//\n" + "\n#" + str(len(fragment_list[i])))
+    output_i.write(log_title + "\nlogfile " + project_name + "_" + str(i+1) + ".txt\n" + "\nnucleotide\n")
+    for j in range(int(len(fragment_list[i])/100)):
+      if j == (int(len(fragment_list[i])/100)):
+        output_i.write(fragment_list[i][j*100:] + "\n")
+      else:
+        output_i.write(fragment_list[i][j*100:(j+1)*100] + "\n")
+    output_i.write("//\n" + "\n#" + str(len(fragment_list[i])))
   else:
     output_i.write(log_title + "\nlogfile " + project_name + "_" + str(i+1) + ".txt\n" + "\nprotein\n" + fragment_list[i] + "\n//\n" + "\n#" + str(len(fragment_list[i])))
   output_i.close()  
