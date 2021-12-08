@@ -130,7 +130,7 @@ bash_script.write("cp " + project_name + "_high_temp.csv " + str(project_name) +
 bash_script.write("cp " + project_name + "_SG_primers.fasta " + str(project_name) + "\n")
 bash_script.write("cp " + project_name + "_sequence.fasta " + str(project_name) + "\n")
 
-bash_script.write("rm -f " + project_name + "*\n")
+bash_script.write("rm -f " + project_name + "_*\n")
 
 bash_script.close()
 
