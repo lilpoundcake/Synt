@@ -100,7 +100,8 @@ for i in range(len(fragment_list)):
                    
 data_log = open("data_log.txt", "w")
 data_log.write("project_name " + project_name + "\nfragment_num " + str(fragment_num) + "\nreact_temp " + str(react_temp))
-data_log.write("# " + fragment_list)
+for i in fragment_list:
+  data_log.write("# " + i)
 data_log.close()
 
 bash_script = open("bash_next.sh", "w")
