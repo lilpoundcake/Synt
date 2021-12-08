@@ -136,9 +136,9 @@ bash_script.write("cp -r ./DNAWorks/" + project_name + "/ .\n")
 
 #bash_script.write("rm -f " + project_name + "_*\n")
 bash_script.write("rm -rf ./DNAWorks ./For_DNAWorks\n" )
-bash_script.write("git config --global user.name lilpoundcaken\git config --global user.email qwerty081295@gmail.com\n")
-bash_script.write("cd ./" + project_name + "/\n" + "git add .\n" + "git commit -m \"random text\"\n")
-bash_script.write("git remote add origin https://github.com/lilpoundcake/" + project_name + ".git\n" + "git push origin master\n")
+#bash_script.write("git config --global user.name lilpoundcaken\git config --global user.email qwerty081295@gmail.com\n")
+#bash_script.write("cd ./" + project_name + "/\n" + "git add .\n" + "git commit -m \"random text\"\n")
+#bash_script.write("git remote add origin https://github.com/lilpoundcake/" + project_name + ".git\n" + "git push origin master\n")
 
 bash_script.close()
 
