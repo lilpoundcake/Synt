@@ -3,7 +3,8 @@
 apt-get install python3-dev
 pip install pandas
 pip install wheel
-pip install primer3
+pip install primer3-py
+apt-get install gfortran
 
 cd ..
 git clone https://github.com/davidhoover/DNAWorks.git
