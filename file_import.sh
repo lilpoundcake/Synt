@@ -1,5 +1,10 @@
 #!/bin/bash
 
+apt-get install python3-dev
+pip install pandas
+apt-get install wheel
+pip install primer3
+
 cd ..
 git clone https://github.com/davidhoover/DNAWorks.git
 cd DNAWorks/
