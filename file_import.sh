@@ -10,7 +10,7 @@ cd ..
 git clone https://github.com/davidhoover/DNAWorks.git
 cd DNAWorks/
 make
-cd ../For_DNAWorks
+cd ../Synt
 
 cp CHO.txt ../DNAWorks/
 cp Sf9.txt ../DNAWorks/
