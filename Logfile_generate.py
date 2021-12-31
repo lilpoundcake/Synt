@@ -4,12 +4,12 @@ import math
 
 log_title = ""
 
-project_name = "ApxIVA_synt" #input("Введите название проекта\n")
+project_name = input("Введите название проекта\n")
 
-react_temp = 68 #input("Введите температуру проведения реакции\n")
+react_temp = input("Введите температуру проведения реакции\n")
 log_title += ("melting low " + str(react_temp) + "\n")
 
-primer_lenght = 50 #input("Введите желаемую длину праймеров\n")
+primer_lenght = input("Введите желаемую длину праймеров\n")
 log_title += ("length low " + str(primer_lenght) + "\n")
 log_title += ("tbio\n")
                   
