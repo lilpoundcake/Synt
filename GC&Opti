@@ -2,7 +2,7 @@
 
 #анализ GC состава гена
 
-sequence = str(input('Введите последовательность ')).upper()
+#sequence = str(input('Введите последовательность ')).upper()
 
 GC_30 = dict()
 for i in range(len(sequence) - 30):
@@ -18,24 +18,26 @@ for i in GC_content.index:
     GC_content.loc[i, 'Min'] = 0
     GC_content.loc[i, 'Mean'] = mean_GC
 
-GC_plot = GC_content.loc[:, ['GC_content', 'Min', 'Max', 'Mean']]
-GC_plot.plot()
+print("Среднее содержание GC - ", mean_GC, "\n")
+    
+#GC_plot = GC_content.loc[:, ['GC_content', 'Min', 'Max', 'Mean']]
+#GC_plot.plot()
 
-project_name = input('Введите название проекта ')
+#project_name = input('Введите название проекта ')
 GC_content.to_excel(project_name + '_GC.xls')
 
 
 #
 
 
-import pandas as pd
+"""import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
 from pylab import rcParams
 rcParams['figure.figsize'] = 15, 9
-
+"""
 codon_usage = dict()
 
 nucleotides = ['A', 'T', 'G', 'C']
@@ -49,7 +51,7 @@ for x in range(len(nucleotides)):
             else:
                 codon_usage[codon] = 0
                 
-sequence = str(input('Введите последовательность ')).upper()
+#sequence = str(input('Введите последовательность ')).upper()
 
 for i in range(0, len(sequence),3):
     codon_usage[sequence[i:i+3]] += 1
@@ -119,6 +121,6 @@ y = []
 for i in x:
     y.append(int(graph.loc[i][0]))
     
-plt.bar(x, y, width=5)
-project_name = input('Введите название проекта ')
+#plt.bar(x, y, width=5)
+#project_name = input('Введите название проекта ')
 graph.to_excel(project_name + '_codon_usage_'+syst_expr+'.xls')
